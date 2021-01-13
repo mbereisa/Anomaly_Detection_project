@@ -293,10 +293,10 @@ global min, sek, times_per_sek, average, newPath1, show_chart, default, close_br
 global min_default, print_all, alarm_coef, df_columns_lables, convert_to_csv, time_of_iteration_limit_to_CSV, speed
 
 # Default_values
-speed = 1
+speed = 10
 # convert file to CSV ('y'/'n')
 convert_to_csv = 'y'
-time_of_iteration_limit_to_CSV = 1
+time_of_iteration_limit_to_CSV = 100000
 # interval to cut by steps. 1- 60 min
 min = 20
 alarm_coef = 1.5
