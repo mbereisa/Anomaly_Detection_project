@@ -201,11 +201,12 @@ def leaknavigator(part_of_sensors_data_zero, part_of_sensors_data, name2, name, 
                 pd.DataFrame(part_of_sensors_data_zero).to_csv(
                     '.' + directory2 + '\\data_zero.csv',
                     index=False)
-                files = glob("Deep_reports\\*")
+
                 dfx = indexing_df(part_of_sensors_data_zero[::speed])
                 anomaly_chart(dfx, name2, directory2)
                 print('Saving CSV files for deeper report ')
                 print("-----------------------------------------------------------------------")
+                files = glob("Deep_reports\\*")
                 print(files)
                 # for f in files:
                 #     print("Copy : ", f, " to ", f'.{directory2}')
@@ -257,6 +258,8 @@ def step_from_DF(df_sensors_data, lenghth_df_step, time_of_iteration):
     if convert_to_csv == 'y':
         # Converting to CSV file if needed
         # ===========================================================================
+        if not os.path.exists(f".\\Produce_CSV\\"):
+            os.makedirs(f".\\Produce_CSV\\")
         pd.DataFrame(part_of_sensors_data).to_csv(f'Produce_CSV\\data_zero{time_of_iteration}.csv', index=False)
         if time_of_iteration > time_of_iteration_limit_to_CSV:
             quit()

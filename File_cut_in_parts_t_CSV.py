@@ -86,6 +86,8 @@ def step_from_DF(df_sensors_data, lenghth_df_step, time_of_iteration):
             df_pint = indexing_df(part_of_sensors_data)
         else:
             df_pint = part_of_sensors_data
+        if not os.path.exists(f".\\Produce_CSV\\"):
+            os.makedirs(f".\\Produce_CSV\\")
         # ===========================================================================
         pd.DataFrame(part_of_sensors_data).to_csv(f'Produce_CSV\\data_zero{time_of_iteration}.csv', index=False)
         if time_of_iteration > time_of_iteration_limit_to_CSV:
