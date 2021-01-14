@@ -298,16 +298,16 @@ global min_default, print_all, alarm_coef, df_columns_lables, convert_to_csv, ti
 # Default_values
 speed = 10
 # convert file to CSV ('y'/'n')
-convert_to_csv = 'y'
+convert_to_csv = 'n'
 time_of_iteration_limit_to_CSV = 100000
 # interval to cut by steps. 1- 60 min
-min = 20
+min = 3
 alarm_coef = 1.5
 # Print charts all in one an 3d? ('y'/'n')
-print_all = 'n'
-show_chart = "n"
-save_chart = 'n'
-close_browser = 'n'
+print_all = 'y'
+show_chart = "y"
+save_chart = 'y'
+close_browser = 'y'
 # time and freqency parameters
 times_per_sek= 100
 average = 100
