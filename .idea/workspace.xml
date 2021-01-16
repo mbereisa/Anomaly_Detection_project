@@ -20,8 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc049d23-e09f-475d-8e7c-71ab106f24da" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/.idea/Anomply_Detection_project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anomaly_detection_2021_ver_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Anomaly_detection_2021_ver_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/data/Crude_oil_pipe_n20130424_0747/From_2013_04_24_07_42_to__2013_04_24_09_02/data_zero.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/data/data_zero30min_csv/From_2013_04_24_07_48_to__2013_04_24_07_57/From_2013_04_24_07_48_to__2013_04_24_07_57_starting_all_from_zero_1_anomaly_chart_column_P10110.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/data/data_zero30min_csv/From_2013_04_24_07_48_to__2013_04_24_07_57/From_2013_04_24_07_48_to__2013_04_24_07_57_starting_all_from_zero_1_anomaly_chart_column_P10115.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/data/data_zero30min_csv/From_2013_04_24_07_48_to__2013_04_24_07_57/From_2013_04_24_07_48_to__2013_04_24_07_57_starting_all_from_zero_1_anomaly_chart_column_P10116.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/data/data_zero30min_csv/From_2013_04_24_07_48_to__2013_04_24_07_57/From_2013_04_24_07_48_to__2013_04_24_07_57_starting_all_from_zero_1_anomaly_chart_column_P10215.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/data/data_zero30min_csv/From_2013_04_24_07_48_to__2013_04_24_07_57/From_2013_04_24_07_48_to__2013_04_24_07_57_starting_all_from_zero_1_anomaly_chart_column_P10216.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/data/data_zero30min_csv/From_2013_04_24_07_48_to__2013_04_24_07_57/From_2013_04_24_07_48_to__2013_04_24_07_57_starting_all_from_zero_1_anomaly_chart_column_P20110.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/data/data_zero30min_csv/From_2013_04_24_07_48_to__2013_04_24_07_57/From_2013_04_24_07_48_to__2013_04_24_07_57_starting_all_from_zero_1_anomaly_chart_column_P20113.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/data/data_zero30min_csv/From_2013_04_24_07_48_to__2013_04_24_07_57/From_2013_04_24_07_48_to__2013_04_24_07_57_starting_all_from_zero_1_anomaly_chart_column_P7500.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reports/data/data_zero30min_csv/From_2013_04_24_07_48_to__2013_04_24_07_57/data_zero.csv" beforeDir="false" />
+>>>>>>> cb859cc03c5722346354ceed5daf81dc76e377c6
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +68,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+<<<<<<< HEAD
     <property name="WebServerToolWindowFactoryState" value="false" />
+=======
+>>>>>>> cb859cc03c5722346354ceed5daf81dc76e377c6
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -81,7 +102,10 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+<<<<<<< HEAD
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+=======
+>>>>>>> cb859cc03c5722346354ceed5daf81dc76e377c6
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Anomaly_detection_2021_ver_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -306,10 +330,17 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Anomaly_detection_2021_ver_1 (1)" />
+<<<<<<< HEAD
         <item itemvalue="Python.File_cut_in_parts_t_CSV" />
         <item itemvalue="Python.Anomaly_detection_2021_ver_1" />
         <item itemvalue="Python.Leaknavigator_anomaly_detection_2021" />
         <item itemvalue="Python.DeapLearning3" />
+=======
+        <item itemvalue="Python.Anomaly_detection_2021_ver_1" />
+        <item itemvalue="Python.Leaknavigator_anomaly_detection_2021" />
+        <item itemvalue="Python.DeapLearning3" />
+        <item itemvalue="Python.Leaknavigator_2020_ACCESS_DB_minus_optimal_dinamic_cof_AI" />
+>>>>>>> cb859cc03c5722346354ceed5daf81dc76e377c6
       </list>
     </recent_temporary>
   </component>
@@ -350,37 +381,67 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1280.680@0.0.1280.680" timestamp="1603893333628" />
+<<<<<<< HEAD
     <state width="1877" height="528" key="GridCell.Tab.0.bottom" timestamp="1610571362990">
+=======
+    <state width="1899" height="182" key="GridCell.Tab.0.bottom" timestamp="1610628303317">
+>>>>>>> cb859cc03c5722346354ceed5daf81dc76e377c6
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1515" height="8" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608291633164" />
+    <state width="1515" height="435" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610571283177" />
     <state width="1899" height="375" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610552185290" />
+<<<<<<< HEAD
     <state width="1877" height="528" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610571362990" />
     <state width="1882" height="120" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1610537408040" />
     <state width="1899" height="192" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1610378042042" />
     <state width="1877" height="528" key="GridCell.Tab.0.center" timestamp="1610571362990">
+=======
+    <state width="1899" height="548" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610561213267" />
+    <state width="1899" height="182" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1610628303317" />
+    <state width="1899" height="192" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1610378042042" />
+    <state width="1899" height="182" key="GridCell.Tab.0.center" timestamp="1610628303317">
+>>>>>>> cb859cc03c5722346354ceed5daf81dc76e377c6
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1515" height="8" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608291633164" />
+    <state width="1515" height="435" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610571283173" />
     <state width="1899" height="375" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610552185290" />
+<<<<<<< HEAD
     <state width="1877" height="528" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610571362990" />
     <state width="1882" height="120" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1610537408040" />
     <state width="1899" height="192" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1610378042042" />
     <state width="1877" height="528" key="GridCell.Tab.0.left" timestamp="1610571362990">
+=======
+    <state width="1899" height="548" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610561213267" />
+    <state width="1899" height="182" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1610628303317" />
+    <state width="1899" height="192" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1610378042042" />
+    <state width="1899" height="182" key="GridCell.Tab.0.left" timestamp="1610628303317">
+>>>>>>> cb859cc03c5722346354ceed5daf81dc76e377c6
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1515" height="8" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608291633164" />
+    <state width="1515" height="435" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610571283173" />
     <state width="1899" height="375" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610552185290" />
+<<<<<<< HEAD
     <state width="1877" height="528" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610571362990" />
     <state width="1882" height="120" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1610537408040" />
     <state width="1899" height="192" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1610378042041" />
     <state width="1877" height="528" key="GridCell.Tab.0.right" timestamp="1610571362990">
+=======
+    <state width="1899" height="548" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610561213267" />
+    <state width="1899" height="182" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1610628303317" />
+    <state width="1899" height="192" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1610378042041" />
+    <state width="1899" height="182" key="GridCell.Tab.0.right" timestamp="1610628303317">
+>>>>>>> cb859cc03c5722346354ceed5daf81dc76e377c6
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1515" height="8" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608291633164" />
+    <state width="1515" height="435" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610571283173" />
     <state width="1899" height="375" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610552185290" />
+<<<<<<< HEAD
     <state width="1877" height="528" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610571362990" />
     <state width="1882" height="120" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1610537408040" />
+=======
+    <state width="1899" height="548" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610561213267" />
+    <state width="1899" height="182" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1610628303317" />
+>>>>>>> cb859cc03c5722346354ceed5daf81dc76e377c6
     <state width="1899" height="192" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1610378042042" />
     <state width="1899" height="236" key="GridCell.Tab.1.bottom" timestamp="1610549968106">
       <screen x="0" y="0" width="1920" height="1040" />
