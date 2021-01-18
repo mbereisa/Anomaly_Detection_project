@@ -2,6 +2,7 @@
 This repository is used for anomaly detection software created by Mindaugas Bereiša on Python. For farther use You have to get my permission.
 It can be used in two ways:
 
+#Please use Python 3.7 version just to be sure that it is the same that is this project done.
 
 # On Pycharm: 
 to run and look for anomalies in large MS Access or CSV files of DATA SERIES with DateStamp.
@@ -47,7 +48,7 @@ average = 100
 How many seconds You would like to sleep system in time You are looking to the life charts before automatically it will close it.
 close_seconds = 20
 
-# If Your file is more than 100 MB I recommend You to cut it in intervals by changing the time and recording to CSV parameter. 
+If Your file is more than 100 MB I recommend You to cut it in intervals by changing the time and recording to CSV parameter. 
 You can use for it the file "File_cut_in_parts_t_CSV.py"
 Choose the paramters and run and make new CSV files in intervals that You need.
 
@@ -55,7 +56,8 @@ Then You can take off the big filel from the folder "data" and put these interva
 
 Before file "Anomaly_detection_2021_ver_1.py" run be shore that convert_to_csv = 'n', because it makes slow and takes a lot of storage.
 
-## If the system finds anomaly automatically makes the file of CSV of the interval. Usually I use 3-5 minutes intervals to run in a files of several hours. This 3-5 minutes files with data_zero.CSV you can put in to the folder "Deep reports" and run Jupyter Notepooks again. 
+## If the system finds anomaly automatically makes the file of CSV of the interval. Usually I use 3-5 minutes intervals to run in a files of several hours. 
+## This 3-5 minutes files with data_zero.CSV you can put in to the folder "Deep_reports" and run Jupyter Notepooks again. 
 
 Best regards
 
