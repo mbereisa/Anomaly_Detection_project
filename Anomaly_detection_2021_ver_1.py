@@ -305,9 +305,9 @@ min = 5
 alarm_coef = 1.5
 # Print charts all in one an 3d? ('y'/'n')
 print_all = 'y'
-show_chart = 'y'
+show_chart = 'n'
 save_chart = 'y'
-close_browser = 'y'
+close_browser = 'n'
 # time and freqency parameters
 times_per_sek= 100
 average = 100
@@ -357,7 +357,6 @@ for path in direktory:
         MS_Access_DB_reader(newPath1, lenghth_df_step)
         print(f"{datetime.datetime.now()}, Finished MS ACCESS {datetime.datetime.now() - start}")
 
-for path in direktory:
     if newPath1[-3:] == "csv":
         start = datetime.datetime.now()
         print(start)
