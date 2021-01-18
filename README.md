@@ -24,13 +24,13 @@ time_of_iteration_limit_to_CSV = 10000
 interval to cut by steps. 1- 60 min
 min = 20
 
-#Coeficient of 1.5 - 2.0 sensitivity
+Coeficient of 1.5 - 2.0 sensitivity
 alarm_coef = 1.5
 
 Print charts all in one an 3d? ('y'/'n')
 print all = 'n'
 
-#Show charts to desktop in real time (it gets much mor slow but very nice charts)? ('y'/'n')
+Show charts to desktop in real time (it gets much mor slow but very nice charts)? ('y'/'n')
 show_chart = "n"
 
 Do you want to save the charts?
