@@ -2,7 +2,7 @@
 This repository is used for anomaly detection software created by Mindaugas Bereiša on Python. For farther use You have to get my permission.
 It can be used in two ways:
 
-#Please use Python 3.7 version just to be sure that it is the same that is this project done.
+# Please use Python 3.7 version just to be sure that it is the same that is this project done.
 
 # On Pycharm: 
 to run and look for anomalies in large MS Access or CSV files of DATA SERIES with DateStamp.
