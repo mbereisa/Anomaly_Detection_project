@@ -133,13 +133,13 @@ def anomaly_chart(df, name2, directory2):
     name3 = directory2 + '\\' + name2 + "_anomaly_chart"
     columns = df.columns
     rows = len(df)
-    half_rows = int(rows / 2)
+    training_rows = int(rows * 0.7)
     rolling1 = average
     for column in columns:
         df[column + '_average'] = df[column].rolling(window=rolling1).mean().shift(periods=-1)
-        noise = (df[column].iloc[:half_rows].max() - df[column].iloc[:half_rows].min()) / 2
-        df[column + '_average_min'] = df[column].iloc[:half_rows].min() - noise * alarm_coef
-        df[column + '_average_max'] = df[column].iloc[:half_rows].max() + noise * alarm_coef
+        noise = (df[column].iloc[:training_rows].max() - df[column].iloc[:training_rows].min()) / 2
+        df[column + '_average_min'] = df[column].iloc[:training_rows].min() - noise * alarm_coef
+        df[column + '_average_max'] = df[column].iloc[:training_rows].max() + noise * alarm_coef
         df[column + '_average_min_rolling'] = df[column + '_average'] - noise
         df[column + '_average_max_rolling'] = df[column + '_average'] + noise
 
@@ -159,20 +159,20 @@ def leaknavigator(part_of_sensors_data_zero, part_of_sensors_data, name2, name, 
     print(df.head())
     columns = df.columns
     rows = len(df)
-    half_rows = int(rows / 2)
+    training_rows = int(rows * 0.7)
     anomaly_count = 0
     rolling1 = average
     for column in columns:
         df[column + '_average'] = df[column].rolling(window=rolling1).mean().shift(periods=-1)
-        noise = (df[column].iloc[:half_rows].max() - df[column].iloc[:half_rows].min()) / 2
-        df[column + '_average_min'] = df[column].iloc[:half_rows].min() - noise * alarm_coef
-        df[column + '_average_max'] = df[column].iloc[:half_rows].max() + noise * alarm_coef
+        noise = (df[column].iloc[:training_rows].max() - df[column].iloc[:training_rows].min()) / 2
+        df[column + '_average_min'] = df[column].iloc[:training_rows].min() - noise * alarm_coef
+        df[column + '_average_max'] = df[column].iloc[:training_rows].max() + noise * alarm_coef
         df[column + '_average_min_rolling'] = df[column + '_average'] - noise
         df[column + '_average_max_rolling'] = df[column + '_average'] + noise
 
         taking_of_nan_values_DF(df)
 
-    for row in range(half_rows, rows):
+    for row in range(training_rows, rows):
         for column in columns:
             min = df[column + '_average_min'].iloc[row]
             max = df[column + '_average_max'].iloc[row]
@@ -249,10 +249,10 @@ def step_from_DF(df_sensors_data, lenghth_df_step, time_of_iteration):
     print("Time_of_iteration", time_of_iteration)
     if time_of_iteration == 0:
         start_interval = 0
-        end_interval = lenghth_df_step + lenghth_df_step * 3
+        end_interval = lenghth_df_step + lenghth_df_step * 5
     else:
         start_interval = (time_of_iteration + 1) * lenghth_df_step
-        end_interval = (time_of_iteration + 1) * lenghth_df_step + lenghth_df_step * 3
+        end_interval = (time_of_iteration + 1) * lenghth_df_step + lenghth_df_step * 5
     part_of_sensors_data = df_sensors_data[start_interval:end_interval].copy()
     print(part_of_sensors_data.head())
     if convert_to_csv == 'y':
@@ -270,7 +270,7 @@ def run_by_steps(df_sensors_data, lenghth_df_step):
     print("run_by_steps(df_sensors_data, lenghth_of_Array ")
     df_sensors_data = taking_of_nan_values_DF(df_sensors_data)
     dflength = len(df_sensors_data)
-    times_for = int(dflength / lenghth_df_step) - 2
+    times_for = int(dflength / lenghth_df_step) - 4
     print("Iteration times for this file will be needed: ", times_for)
     for time_of_iteration in range(times_for):
         print(time_of_iteration)
@@ -301,8 +301,8 @@ speed = 10
 convert_to_csv = 'n'
 time_of_iteration_limit_to_CSV = 100000
 # interval to cut by steps. 1- 60 min
-min = 5
-alarm_coef = 1.5
+min = 3
+alarm_coef = 1
 # Print charts all in one an 3d? ('y'/'n')
 print_all = 'y'
 show_chart = 'n'
@@ -310,7 +310,7 @@ save_chart = 'y'
 close_browser = 'n'
 # time and freqency parameters
 times_per_sek= 100
-average = 100
+average = 1000
 close_seconds = 30
 
 print(
