@@ -128,72 +128,53 @@ def anomaly_plot(df_plot, name3, column):
             os.system("taskkill /im chrome.exe /f")
 
 
-def anomaly_chart(df, name2, directory2):
-    print("anomaly_chart(npx, name2, directory2))")
-    name3 = directory2 + '\\' + name2 + "_anomaly_chart"
-    columns = df.columns
-    rows = len(df)
-    training_rows = int(rows * 0.7)
-    rolling1 = average
-    for column in columns:
-        df[column + '_average'] = df[column].rolling(window=rolling1).mean().shift(periods=-1)
-        noise = (df[column].iloc[:training_rows].max() - df[column].iloc[:training_rows].min()) / 2
-        df[column + '_average_min'] = df[column].iloc[:training_rows].min() - noise * alarm_coef
-        df[column + '_average_max'] = df[column].iloc[:training_rows].max() + noise * alarm_coef
-        df[column + '_average_min_rolling'] = df[column + '_average'] - noise
-        df[column + '_average_max_rolling'] = df[column + '_average'] + noise
-
-        df = taking_of_nan_values_DF(df)
-
-        anomaly_plot(df[[column, column + '_average', column + '_average_min', column + '_average_max', column + '_average_min_rolling', column + '_average_max_rolling']], name3, column)
-
 def leaknavigator(part_of_sensors_data_zero, part_of_sensors_data, name2, name, file_main_name, main_directory):
 
     if print_all == 'y':
         print_df = part_of_sensors_data_zero[::speed]
         iplot_charts_3d(indexing_df(print_df), name, f"{main_directory}\\3d")
         iplot_charts(indexing_df(print_df), file_main_name, "")
-    anomaly_count = 0
     df = part_of_sensors_data_zero[::speed].copy()
     df = indexing_df(df)
+    alarm_coef = 0.8
+    rolling1 = 100
     print(df.head())
     columns = df.columns
     rows = len(df)
-    training_rows = int(rows * 0.7)
+    training_rows = int(rows * 0.5)
     anomaly_count = 0
-    rolling1 = average
     for column in columns:
-        df[column + '_average'] = df[column].rolling(window=rolling1).mean().shift(periods=-1)
+        df[column + '_average'] = df[column].rolling(window=rolling1).mean().shift(periods=-rolling1)
         noise = (df[column].iloc[:training_rows].max() - df[column].iloc[:training_rows].min()) / 2
-        df[column + '_average_min'] = df[column].iloc[:training_rows].min() - noise * alarm_coef
-        df[column + '_average_max'] = df[column].iloc[:training_rows].max() + noise * alarm_coef
-        df[column + '_average_min_rolling'] = df[column + '_average'] - noise
-        df[column + '_average_max_rolling'] = df[column + '_average'] + noise
+        df[column + '_average_min_rolling'] = df[column + '_average'] - noise * alarm_coef
+        df[column + '_average_max_rolling'] = df[column + '_average'] + noise * alarm_coef
+        df[column + '_average_min'] = df[column + '_average_min_rolling'] .iloc[:training_rows].min()
+        df[column + '_average_max'] = df[column + '_average_max_rolling'].max()
 
         taking_of_nan_values_DF(df)
 
     for row in range(training_rows, rows):
         for column in columns:
-            min = df[column + '_average_min'].iloc[row]
-            max = df[column + '_average_max'].iloc[row]
-            min_rolling = df[column + '_average_min_rolling'].iloc[row]
-            max_rolling = df[column + '_average_max_rolling'].iloc[row]
-            value = df[column].iloc[row]
-
-            if max_rolling > max or min_rolling < min:
+            if df[column].iloc[row] > df[column + '_average_max_rolling'].iloc[row]:
                 anomaly_count = anomaly_count + 1
-                if anomaly_count == 1:
-                    first_column = column
-                print("row:", row, "column:", column, 'anomaly_count: ', anomaly_count, 'min: ', min, 'value: ', value,
-                      'max:', max)
-                print("===========================================================================================")
-                print('anomaly_count: ', anomaly_count, 'min_rolling: ', min_rolling, 'value: ', value, 'max_rolling:',
-                      max_rolling)
-                print("===========================================================================================")
+                print("anomaly_count", anomaly_count, column, " value > average_max_rolling  ")
 
-            if anomaly_count > 10:
+            if df[column].iloc[row] < df[column + '_average_min_rolling'].iloc[row]:
+                anomaly_count = anomaly_count + 1
+                print("anomaly_count", anomaly_count, column, " value < average_min_rolling ")
+
+            if df[column].iloc[row] > df[column + '_average_max'].iloc[row]:
+                anomaly_count = anomaly_count + 1
+                print("anomaly_count", anomaly_count, column, " value > average_max  ")
+
+            if df[column].iloc[row] < df[column + '_average_min'].iloc[row]:
+                anomaly_count = anomaly_count + 1
+                print("anomaly_count", anomaly_count, column, " value < average_min ")
+
+
+            if anomaly_count > 20:
                 print("===========================================================================================")
-                print(f'!!!!!!!!!!!!!!!!!Anomaly detected in data column {first_column} !!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+                print(f'!!!!!!!!!!!!!!!!!Anomaly detected in data column !!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
                 print("indexing for printing")
                 print(part_of_sensors_data_zero)
@@ -203,7 +184,17 @@ def leaknavigator(part_of_sensors_data_zero, part_of_sensors_data, name2, name, 
                     index=False)
 
                 dfx = indexing_df(part_of_sensors_data_zero[::speed])
-                anomaly_chart(dfx, name2, directory2)
+                # anomaly_chart(dfx, name2, directory2)
+                for column in columns:
+                    anomaly_plot(df[[column,
+                                     column + '_average',
+                                     column + '_average_min',
+                                     column + '_average_max',
+                                     column + '_average_min_rolling',
+                                     column + '_average_max_rolling']],
+                                 directory2 + '\\' + name2 + "_anomaly_chart",
+                                 column)
+
                 print('Saving CSV files for deeper report ')
                 print("-----------------------------------------------------------------------")
                 files = glob("Deep_reports\\*")
@@ -292,8 +283,8 @@ def csv_reader(newPath1, lenghth_df_step):
     run_by_steps(df_sensors_data, lenghth_df_step)
 
 # Conditions for starting
-global min, sek, times_per_sek, average, newPath1, show_chart, default, close_browser, close_seconds, speed_default, save_chart
-global min_default, print_all, alarm_coef, df_columns_lables, convert_to_csv, time_of_iteration_limit_to_CSV, speed
+global min, sek, times_per_sek,  newPath1, show_chart, default, close_browser, close_seconds, speed_default, save_chart
+global min_default, print_all, df_columns_lables, convert_to_csv, time_of_iteration_limit_to_CSV, speed
 
 # Default_values
 speed = 10
@@ -301,8 +292,8 @@ speed = 10
 convert_to_csv = 'n'
 time_of_iteration_limit_to_CSV = 100000
 # interval to cut by steps. 1- 60 min
-min = 3
-alarm_coef = 1.3
+min = 5
+
 # Print charts all in one an 3d? ('y'/'n')
 print_all = 'y'
 show_chart = 'n'
@@ -310,7 +301,6 @@ save_chart = 'y'
 close_browser = 'n'
 # time and freqency parameters
 times_per_sek= 100
-average = 1000
 close_seconds = 30
 
 print(
@@ -323,7 +313,6 @@ print("Close_browser = ", close_browser)
 print("Speed = ", speed)
 print("times_per_sek = ", times_per_sek)
 print("min = ", min)
-print("average = ", average)
 print(
     '------------------------------------------------------------------------------------------------------------------------------------------')
 
