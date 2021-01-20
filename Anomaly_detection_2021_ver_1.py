@@ -302,7 +302,7 @@ convert_to_csv = 'n'
 time_of_iteration_limit_to_CSV = 100000
 # interval to cut by steps. 1- 60 min
 min = 3
-alarm_coef = 1
+alarm_coef = 1.3
 # Print charts all in one an 3d? ('y'/'n')
 print_all = 'y'
 show_chart = 'n'
