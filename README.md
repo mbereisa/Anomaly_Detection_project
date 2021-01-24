@@ -2,6 +2,8 @@
 This repository is used for anomaly detection software created by Mindaugas Bereiša on Python. For farther use You have to get my permission.
 It can be used in two ways:
 
+# Jupyter Notepooks for more detailed report are in folder"Deep_reports"
+
 # Please use Python 3.7 version, just to be sure, that it is the same that is this project done.
 
 # On Pycharm: 
