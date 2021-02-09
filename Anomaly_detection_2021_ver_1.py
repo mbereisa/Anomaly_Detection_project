@@ -17,7 +17,7 @@ import shutil
 warnings.filterwarnings("ignore")
 import time
 import plotly.express as px
-import io
+import os
 import matplotlib as mpl
 from matplotlib.pylab import rcParams
 
@@ -296,12 +296,12 @@ min = 5
 
 # Print charts all in one an 3d? ('y'/'n')
 print_all = 'y'
-show_chart = 'n'
+show_chart = 'y'
 save_chart = 'y'
 close_browser = 'n'
 # time and freqency parameters
 times_per_sek= 100
-close_seconds = 30
+close_seconds = 15
 
 print(
     '------------------------------------------------------------------------------------------------------------------------------------------')
