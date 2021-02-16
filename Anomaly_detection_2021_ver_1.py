@@ -136,7 +136,7 @@ def leaknavigator(part_of_sensors_data_zero, part_of_sensors_data, name2, name, 
         iplot_charts(indexing_df(print_df), file_main_name, "")
     df = part_of_sensors_data_zero[::speed].copy()
     df = indexing_df(df)
-    alarm_coef = 0.8
+    alarm_coef = 1
     rolling1 = 100
     print(df.head())
     columns = df.columns
@@ -148,8 +148,8 @@ def leaknavigator(part_of_sensors_data_zero, part_of_sensors_data, name2, name, 
         noise = (df[column].iloc[:training_rows].max() - df[column].iloc[:training_rows].min()) / 2
         df[column + '_average_min_rolling'] = df[column + '_average'] - noise * alarm_coef
         df[column + '_average_max_rolling'] = df[column + '_average'] + noise * alarm_coef
-        df[column + '_average_min'] = df[column + '_average_min_rolling'] .iloc[:training_rows].min()
-        df[column + '_average_max'] = df[column + '_average_max_rolling'].max()
+        df[column + '_average_min'] = df[column + '_average_min_rolling'].iloc[:training_rows].min()
+        df[column + '_average_max'] = df[column + '_average_max_rolling'].iloc[:training_rows].max()
 
         taking_of_nan_values_DF(df)
 
@@ -172,7 +172,7 @@ def leaknavigator(part_of_sensors_data_zero, part_of_sensors_data, name2, name, 
                 print("anomaly_count", anomaly_count, column, " value < average_min ")
 
 
-            if anomaly_count > 20:
+            if anomaly_count > 50:
                 print("===========================================================================================")
                 print(f'!!!!!!!!!!!!!!!!!Anomaly detected in data column !!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
